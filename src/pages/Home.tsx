@@ -146,18 +146,18 @@ function HeroCarousel() {
     hidden: { opacity: 0, y: 32, filter: 'blur(6px)' },
     visible: (i: number) => ({
       opacity: 1, y: 0, filter: 'blur(0px)',
-      transition: { delay: 0.2 + i * 0.075, duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+      transition: { delay: 0.2 + i * 0.075, duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
     }),
   }
 
   const subVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.7, duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.7, duration: 0.75, ease: [0.22, 1, 0.36, 1] as const } },
   }
 
   const btnVariants = {
     hidden: { opacity: 0, y: 18 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.9, duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.9, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
   }
 
   return (
@@ -211,7 +211,7 @@ function HeroCarousel() {
             <motion.span
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
               className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 border border-[#F5F5DC]/20 rounded-full backdrop-blur-sm bg-[#3D4F22]/20"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#8FAF59] animate-pulse" />
