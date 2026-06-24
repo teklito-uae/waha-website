@@ -1,0 +1,47 @@
+# WAHA Interiors
+
+> Premium interior design firm in Kasaragod, Kerala, India.
+
+## About
+
+WAHA Interiors is a luxury interior design studio based in Kasaragod, Kerala, India. We design serene, intentional spaces for residential, commercial, and landscape clients. Our philosophy is the "Oasis Concept" — every space should feel like a sanctuary.
+
+## Services
+
+- **Residential Interior Design**: Full-service design for homes, villas, and apartments in Kasaragod and Kerala.
+- **Commercial Interior Design**: Offices, restaurants, retail, and hospitality spaces.
+- **Landscape Design**: Outdoor living, garden courts, terraces, and water features.
+
+## Primary Service Area
+
+Kasaragod, Mogral, Manjeshwar, Kanhangad, and broader Kerala, India.
+
+## Target Clients
+
+- Homeowners building or renovating in Kasaragod
+- Property developers in Kerala
+- Commercial businesses in Kasaragod district
+- Clients seeking premium, minimalist interior design
+
+## Differentiators
+
+- Deep understanding of Kerala's climate, materials, and culture
+- Minimalist luxury aesthetic — clean, serene, architectural
+- Bilingual service: English and Malayalam
+- End-to-end project management
+
+## Contact
+
+- **Website**: https://wahainteriors.com
+- **Email**: hello@wahainteriors.com
+- **Location**: Kasaragod, Kerala, India - 671121
+- **Languages**: English, Malayalam
+
+## Social Media
+
+- Instagram: https://instagram.com/wahainteriors
+- LinkedIn: https://linkedin.com/company/wahainteriors
+
+---
+
+*This file is formatted for LLM ingestion per the llms.txt standard.*
