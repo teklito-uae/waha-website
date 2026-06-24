@@ -104,7 +104,7 @@ export default function AboutPage() {
             {values.map(({ key, icon: Icon }, i) => (
               <AnimatedSection key={key} delay={i * 0.1}>
                 <div className="p-8 border border-border rounded-sm hover:border-pine/30 transition-colors group">
-                  <div className="w-10 h-10 bg-pine/8 rounded-sm flex items-center justify-center mb-5 group-hover:bg-pine/15 transition-colors">
+                  <div className="w-10 h-10 bg-pine/10 rounded-sm flex items-center justify-center mb-5 group-hover:bg-pine/20 transition-colors">
                     <Icon size={18} className="text-pine" />
                   </div>
                   <h3 className="font-sora font-semibold text-foreground mb-2">
@@ -140,3 +140,4 @@ export default function AboutPage() {
     </>
   )
 }
+

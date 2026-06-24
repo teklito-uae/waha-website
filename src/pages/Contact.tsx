@@ -69,57 +69,91 @@ export default function ContactPage() {
         <div className="container-waha">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Contact Info */}
-            <AnimatedSection direction="left" className="lg:col-span-2 space-y-8">
+            <AnimatedSection direction="left" className="lg:col-span-2 space-y-10">
+              
+              {/* Offices */}
               <div>
                 <h2 className="font-sora font-semibold text-xl text-foreground mb-6">
-                  Contact Information
+                  Our Offices
                 </h2>
-                <div className="space-y-5">
+                <div className="space-y-8">
+                  
+                  {/* Dubai Branch */}
                   <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 bg-pine/8 rounded-sm flex items-center justify-center shrink-0">
-                      <MapPin size={16} className="text-pine" />
+                    <div className="w-10 h-10 bg-pine/10 rounded-sm flex items-center justify-center shrink-0 mt-1">
+                      <MapPin size={18} className="text-pine" />
                     </div>
                     <div>
-                      <p className="font-inter text-xs text-muted-foreground mb-0.5">Location</p>
-                      <p className="font-sora font-semibold text-sm text-foreground">{t('contact.address')}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 bg-pine/8 rounded-sm flex items-center justify-center shrink-0">
-                      <Mail size={16} className="text-pine" />
-                    </div>
-                    <div>
-                      <p className="font-inter text-xs text-muted-foreground mb-0.5">Email</p>
-                      <a
-                        href="mailto:hello@wahainteriors.com"
-                        className="font-sora font-semibold text-sm text-foreground hover:text-pine transition-colors"
-                      >
-                        {t('contact.emailLabel')}
+                      <h3 className="font-sora font-semibold text-base text-foreground mb-1">Dubai Branch</h3>
+                      <p className="font-inter text-sm text-muted-foreground leading-relaxed mb-2">
+                        Sulthan Building, Al - Raffa Street,<br/>Bur Dubai, Dubai - UAE
+                      </p>
+                      <a href="tel:+971567850662" className="font-inter text-sm font-medium text-pine hover:underline flex items-center gap-2">
+                        <Phone size={12} /> +971 56 785 0662
                       </a>
                     </div>
                   </div>
+
+                  {/* Kerala HQ */}
                   <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 bg-pine/8 rounded-sm flex items-center justify-center shrink-0">
-                      <Phone size={16} className="text-pine" />
+                    <div className="w-10 h-10 bg-pine/10 rounded-sm flex items-center justify-center shrink-0 mt-1">
+                      <MapPin size={18} className="text-pine" />
                     </div>
                     <div>
-                      <p className="font-inter text-xs text-muted-foreground mb-0.5">Phone</p>
-                      <a
-                        href="tel:+91XXXXXXXXXX"
-                        className="font-sora font-semibold text-sm text-foreground hover:text-pine transition-colors"
-                      >
-                        {t('contact.phoneLabel')}
-                      </a>
+                      <h3 className="font-sora font-semibold text-base text-foreground mb-1">Kerala Headquarter</h3>
+                      <p className="font-inter text-sm text-muted-foreground leading-relaxed mb-2">
+                        Mogral, Kasaragod, Kerala
+                      </p>
+                      <div className="flex flex-col gap-1.5">
+                        <a href="tel:+919995587428" className="font-inter text-sm font-medium text-pine hover:underline flex items-center gap-2">
+                          <Phone size={12} /> +91 99955 87428
+                        </a>
+                        <a href="tel:+919188417424" className="font-inter text-sm font-medium text-pine hover:underline flex items-center gap-2">
+                          <Phone size={12} /> +91 91884 17424
+                        </a>
+                      </div>
                     </div>
                   </div>
+
                 </div>
               </div>
 
-              <div className="p-6 bg-pine/5 border border-pine/10 rounded-sm">
-                <p className="font-inter text-sm text-muted leading-relaxed">
-                  We typically respond within <strong className="text-foreground">24 hours</strong>. For urgent inquiries, please call us directly.
-                </p>
+              {/* Team Members */}
+              <div>
+                <h2 className="font-sora font-semibold text-xl text-foreground mb-6">
+                  Direct Contacts
+                </h2>
+                <div className="space-y-6">
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-pine/5 rounded-full border border-pine/10 flex items-center justify-center shrink-0">
+                      <span className="font-sora font-bold text-sm text-pine">AT</span>
+                    </div>
+                    <div>
+                      <h3 className="font-sora font-semibold text-sm text-foreground">Ahmed Thanseef</h3>
+                      <p className="font-inter text-xs text-muted-foreground mb-1.5">Interior Designer</p>
+                      <a href="tel:+919995587428" className="font-inter text-xs font-medium text-pine hover:underline flex items-center gap-1.5">
+                        <Phone size={10} /> +91 99955 87428
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-pine/5 rounded-full border border-pine/10 flex items-center justify-center shrink-0">
+                      <span className="font-sora font-bold text-sm text-pine">FS</span>
+                    </div>
+                    <div>
+                      <h3 className="font-sora font-semibold text-sm text-foreground">Fathimath Sabeena</h3>
+                      <p className="font-inter text-xs text-muted-foreground mb-1.5">Interior Designer</p>
+                      <a href="tel:+919188417424" className="font-inter text-xs font-medium text-pine hover:underline flex items-center gap-1.5">
+                        <Phone size={10} /> +91 91884 17424
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
               </div>
+
             </AnimatedSection>
 
             {/* Form */}
@@ -226,3 +260,4 @@ export default function ContactPage() {
     </>
   )
 }
+

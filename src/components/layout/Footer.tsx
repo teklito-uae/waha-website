@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Globe, ExternalLink, Mail, MapPin, Phone } from 'lucide-react'
+import { Globe, Link2, Mail, MapPin, Phone } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
 import wahaLogo from '@/assets/waha-interior-logo.png'
 
@@ -31,7 +31,7 @@ export default function Footer() {
                 className="w-9 h-9 border border-lime-cream/20 rounded-sm flex items-center justify-center hover:border-lime-cream/60 hover:text-lime-cream transition-all"
                 aria-label="Instagram"
               >
-                <Share2 size={15} />
+                <Globe size={15} />
               </a>
               <a
                 href="https://linkedin.com/company/wahainteriors"
@@ -40,7 +40,7 @@ export default function Footer() {
                 className="w-9 h-9 border border-lime-cream/20 rounded-sm flex items-center justify-center hover:border-lime-cream/60 hover:text-lime-cream transition-all"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={15} />
+                <Link2 size={15} />
               </a>
             </div>
           </div>
@@ -89,34 +89,45 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="font-sora text-sm font-semibold text-lime-cream tracking-widest uppercase mb-5">
+          <div className="md:col-span-2 lg:col-span-1">
+            <h3 className="font-sora text-sm font-semibold text-lime-cream tracking-widest uppercase mb-6">
               {t('footer.contact')}
             </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2.5">
-                <MapPin size={14} className="mt-0.5 shrink-0 text-lime-cream/40" />
-                <span className="font-inter text-sm text-lime-cream/60">{t('footer.location')}</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail size={14} className="shrink-0 text-lime-cream/40" />
-                <a
-                  href="mailto:hello@wahainteriors.com"
-                  className="font-inter text-sm text-lime-cream/60 hover:text-lime-cream transition-colors"
-                >
-                  hello@wahainteriors.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone size={14} className="shrink-0 text-lime-cream/40" />
-                <a
-                  href="tel:+91XXXXXXXXXX"
-                  className="font-inter text-sm text-lime-cream/60 hover:text-lime-cream transition-colors"
-                >
-                  +91 XXXXX XXXXX
-                </a>
-              </li>
-            </ul>
+            
+            <div className="space-y-8">
+              {/* Dubai Branch */}
+              <div>
+                <p className="font-inter text-[10px] font-bold text-lime-cream/50 uppercase tracking-widest mb-3">Dubai Branch</p>
+                <ul className="space-y-2.5">
+                  <li className="flex items-start gap-2.5">
+                    <MapPin size={14} className="mt-0.5 shrink-0 text-lime-cream/40" />
+                    <span className="font-inter text-sm text-lime-cream/60 leading-relaxed">Sulthan Building, Al - Raffa Street,<br/>Bur Dubai, UAE</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Phone size={14} className="shrink-0 text-lime-cream/40" />
+                    <a href="tel:+971567850662" className="font-inter text-sm text-lime-cream/60 hover:text-lime-cream transition-colors">+971 56 785 0662</a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Kerala HQ */}
+              <div>
+                <p className="font-inter text-[10px] font-bold text-lime-cream/50 uppercase tracking-widest mb-3">Kerala HQ</p>
+                <ul className="space-y-2.5">
+                  <li className="flex items-start gap-2.5">
+                    <MapPin size={14} className="mt-0.5 shrink-0 text-lime-cream/40" />
+                    <span className="font-inter text-sm text-lime-cream/60 leading-relaxed">Mogral, Kasaragod, Kerala</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Phone size={14} className="mt-0.5 shrink-0 text-lime-cream/40" />
+                    <div className="flex flex-col gap-1.5">
+                      <a href="tel:+919995587428" className="font-inter text-sm text-lime-cream/60 hover:text-lime-cream transition-colors">+91 99955 87428</a>
+                      <a href="tel:+919188417424" className="font-inter text-sm text-lime-cream/60 hover:text-lime-cream transition-colors">+91 91884 17424</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -132,3 +143,4 @@ export default function Footer() {
     </footer>
   )
 }
+

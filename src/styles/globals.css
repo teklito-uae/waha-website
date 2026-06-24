@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Malayalam:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Host+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,30 +6,44 @@
 
 @layer base {
   :root {
-    /* WAHA Brand — Light Mode (Beige + Pine) */
-    --background: 40 100% 95%;        /* #FFF7E6 beige */
-    --foreground: 152 100% 10%;       /* #00311F pine */
+    /* ─────────────────────────────────────────────
+       WAHA Brand — Olive Green #556B2F + Warm Beige #F5F5DC
+       ───────────────────────────────────────────── */
 
-    --primary: 152 100% 10%;          /* #00311F pine */
-    --primary-foreground: 73 75% 80%; /* #ecf2a8 lime-cream */
+    --background: 60 50% 97%;
+    /* #FAFAEF */
+    --foreground: 85 38% 22%;
+    /* #3D4F22 olive-dark */
 
-    --secondary: 152 40% 18%;         /* #1A3A28 dark forest */
-    --secondary-foreground: 40 100% 95%;
+    --primary: 82 40% 30%;
+    /* #556B2F */
+    --primary-foreground: 60 53% 91%;
+    /* #F5F5DC warm beige */
 
-    --muted: 116 20% 34%;             /* #4A6741 sage */
-    --muted-foreground: 100 20% 53%;  /* #7A9E6A light sage */
+    --secondary: 85 38% 22%;
+    /* #3D4F22 */
+    --secondary-foreground: 60 53% 91%;
 
-    --accent: 100 38% 75%;            /* #B8D4A8 pale green */
-    --accent-foreground: 152 100% 10%;
+    --muted: 87 24% 76%;
+    /* #C8D9A8 olive-mist */
+    --muted-foreground: 87 26% 38%;
+    /* #6B8A3A olive-mid */
 
-    --card: 48 100% 98%;              /* #FEFCF5 off-white */
-    --card-foreground: 152 100% 10%;
+    --accent: 53 35% 85%;
+    /* #E8E4CC beige-deep */
+    --accent-foreground: 85 38% 22%;
+    /* #3D4F22 */
 
-    --border: 100 30% 80%;            /* #C8DDB8 soft border */
-    --input: 100 30% 80%;
-    --ring: 152 100% 10%;
+    --card: 60 50% 95%;
+    /* #F5F5DC */
+    --card-foreground: 85 38% 22%;
 
-    --radius: 0.5rem;
+    --border: 50 30% 82%;
+    /* #D4CFA8 */
+    --input: 50 30% 82%;
+    --ring: 82 40% 30%;
+
+    --radius: 0.25rem;
   }
 }
 
@@ -43,23 +57,31 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Host Grotesk', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sora;
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
 @layer utilities {
   .hero-bg {
-    background-color: #00311F;
+    background-color: #556B2F;
   }
 
   .hero-text {
-    color: #ecf2a8;
+    color: #F5F5DC;
   }
 
   .text-balance {
@@ -74,15 +96,56 @@
     @apply max-w-7xl mx-auto px-6 md:px-12;
   }
 
-  /* Glassmorphism card */
-  .glass-card {
-    background: rgba(255, 247, 230, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(200, 221, 184, 0.4);
+  /* Gold thin divider */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A227, transparent);
   }
 
-  /* Smooth underline link effect */
+  /* Clip-path text reveal */
+  .clip-reveal {
+    clip-path: inset(0 100% 0 0);
+    animation: clipReveal 0.9s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+  }
+
+  @keyframes clipReveal {
+    to {
+      clip-path: inset(0 0% 0 0);
+    }
+  }
+
+  /* CSS Marquee */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Glass card */
+  .glass-card {
+    background: rgba(245, 245, 220, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 207, 168, 0.5);
+  }
+
+  /* Smooth underline */
   .link-underline {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Serif italic helper */
+  .serif-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
   }
 }

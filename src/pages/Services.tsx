@@ -50,7 +50,7 @@ export default function ServicesPage() {
               return (
                 <AnimatedSection key={service.id} delay={i * 0.1}>
                   <div className="p-8 border border-border rounded-sm hover:border-pine/30 transition-colors h-full group">
-                    <div className="w-12 h-12 bg-pine/8 rounded-sm flex items-center justify-center mb-6 group-hover:bg-pine/15 transition-colors">
+                    <div className="w-12 h-12 bg-pine/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-pine/20 transition-colors">
                       <Icon size={22} className="text-pine" />
                     </div>
                     <h2 className="font-sora font-bold text-xl text-foreground mb-3">
@@ -142,3 +142,4 @@ export default function ServicesPage() {
     </>
   )
 }
+

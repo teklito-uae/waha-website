@@ -7,6 +7,8 @@ interface AnimatedSectionProps {
   className?: string
   delay?: number
   direction?: 'up' | 'left' | 'right' | 'none'
+  distance?: number
+  duration?: number
 }
 
 export default function AnimatedSection({
@@ -14,34 +16,36 @@ export default function AnimatedSection({
   className,
   delay = 0,
   direction = 'up',
+  distance = 48,
+  duration = 0.75,
 }: AnimatedSectionProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === 'up' ? 30 : 0,
-      x: direction === 'left' ? -30 : direction === 'right' ? 30 : 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: {
-        duration: 0.65,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        delay,
-      },
+  const hiddenState = {
+    opacity: 0,
+    y: direction === 'up' ? distance : 0,
+    x: direction === 'left' ? -distance : direction === 'right' ? distance : 0,
+    filter: 'blur(4px)',
+  }
+
+  const visibleState = {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration,
+      ease: [0.22, 1, 0.36, 1] as const, // expo-out — the luxury real-estate easing
+      delay,
     },
   }
 
   return (
     <motion.div
       ref={ref}
-      variants={variants}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      initial={hiddenState}
+      animate={isInView ? visibleState : hiddenState}
       className={cn(className)}
     >
       {children}
