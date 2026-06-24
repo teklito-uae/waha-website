@@ -161,7 +161,7 @@ function HeroCarousel() {
   }
 
   return (
-    <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-[#0f1a0b]">
+    <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-[rgb(11,58,40)]">
       {/* Stack slides with crossfade */}
       {heroSlides.map((slide, i) => (
         <AnimatePresence key={i}>
@@ -183,16 +183,19 @@ function HeroCarousel() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Dark olive shadow overlay - darker at top for navbar visibility, solid at bottom for seamless blend */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a0b]/90 via-[#3D4F22]/35 to-[#0f1a0b]" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0f1a0b]/50 via-transparent to-[#0f1a0b]/50" />
+              {/* Vibrant forest green shadow overlay - dark edges, transparent center to let photography shine */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[rgb(11,58,40)]/80 via-transparent to-[rgb(11,58,40)] opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[rgb(11,58,40)]/50 via-transparent to-[rgb(11,58,40)]/50" />
+              
+              {/* Subtle noise texture */}
+              <div className="absolute inset-0 bg-noise opacity-[0.06] mix-blend-overlay" />
             </motion.div>
           )}
         </AnimatePresence>
       ))}
 
       {/* Dedicated bottom blur fade to perfectly blend with the brand section below */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0f1a0b] via-[#0f1a0b]/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[rgb(11,58,40)] via-[rgb(11,58,40)]/80 to-transparent z-10 pointer-events-none" />
 
       {/* Content — always on top, centered */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 md:px-16">
@@ -218,7 +221,7 @@ function HeroCarousel() {
             </motion.span>
 
             {/* Headline — word by word, lighter weight */}
-            <h1 className="font-sora font-light text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] hero-text leading-[1.1] tracking-[-0.01em] mb-7">
+            <h1 className="font-sora font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-[#F5F5DC] leading-[1.1] tracking-[-0.01em] mb-7">
               {heroSlides[selected].headline.split('\n').map((line, li) => (
                 <span key={li} className="block">
                   {line.split(' ').map((word, wi) => (
@@ -238,7 +241,7 @@ function HeroCarousel() {
             {/* Subheadline */}
             <motion.p
               variants={subVariants}
-              className="font-inter font-light text-base md:text-lg text-[#F5F5DC]/55 max-w-lg leading-relaxed mb-10 tracking-wide"
+              className="font-inter font-light text-base md:text-lg text-[#D4BA89]/85 max-w-lg leading-relaxed mb-10 tracking-wide"
             >
               {heroSlides[selected].sub}
             </motion.p>
@@ -246,12 +249,12 @@ function HeroCarousel() {
             {/* CTA Buttons */}
             <motion.div variants={btnVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg"
-                className="bg-[#F5F5DC] text-[#2A3717] hover:bg-[#F5F5DC]/92 font-inter font-medium tracking-wide rounded-sm px-10 py-6 text-sm"
+                className="bg-[#D4BA89] text-[#1a2e14] hover:bg-[#C5A880] font-inter font-semibold tracking-wide rounded-sm px-10 py-6 text-sm transition-colors duration-300"
               >
                 <Link to="/projects">View Our Work</Link>
               </Button>
               <Button asChild variant="outline" size="lg"
-                className="border-[#F5F5DC]/30 text-[#F5F5DC] hover:bg-white/8 hover:border-[#F5F5DC]/55 font-inter font-medium tracking-wide rounded-sm px-10 py-6 text-sm bg-transparent backdrop-blur-sm"
+                className="border-[#D4BA89]/40 text-[#D4BA89] hover:bg-[#D4BA89]/10 font-inter font-medium tracking-wide rounded-sm px-10 py-6 text-sm bg-transparent backdrop-blur-sm transition-all duration-300"
               >
                 <Link to="/contact">Book Free Consultation</Link>
               </Button>
@@ -327,7 +330,7 @@ function CinematicServices() {
       
       {/* Subtle background text */}
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] z-0">
-        <div className="font-sora font-black text-[20vw] leading-none whitespace-nowrap text-pine select-none">
+        <div className="font-sora font-black text-[25vw] md:text-[20vw] leading-none whitespace-nowrap text-pine select-none">
           WAHA
         </div>
       </div>
@@ -335,14 +338,14 @@ function CinematicServices() {
       {/* Top Layer - Solid */}
       <motion.div
         style={{ x: xTop }}
-        className="relative z-10 whitespace-nowrap font-sora font-black text-[5vw] md:text-[3.5vw] leading-[1.1] text-pine uppercase tracking-tighter"
+        className="relative z-10 whitespace-nowrap font-sora font-black text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3.5vw] leading-[1.1] text-pine uppercase tracking-tighter"
       >
         Interior Design <span className="font-light text-pine/30 mx-4 md:mx-8">|</span> Custom Furniture <span className="font-light text-pine/30 mx-4 md:mx-8">|</span> Turnkey Execution <span className="font-light text-pine/30 mx-4 md:mx-8">|</span> Space Planning <span className="font-light text-pine/30 mx-4 md:mx-8">|</span> Styling
       </motion.div>
 
       {/* Bottom Layer - Hollow/Outline styling using webkit-text-stroke */}
       <motion.div
-        className="relative z-10 whitespace-nowrap font-sora font-black text-[5vw] md:text-[3.5vw] leading-[1.1] uppercase tracking-tighter text-transparent mt-2 md:mt-3"
+        className="relative z-10 whitespace-nowrap font-sora font-black text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3.5vw] leading-[1.1] uppercase tracking-tighter text-transparent mt-2 md:mt-3"
         style={{
           x: xBottom,
           WebkitTextStroke: '1px #1a2e14',
@@ -434,10 +437,10 @@ function CompanySection() {
               ].map((stat, i) => (
                 <div
                   key={stat.label}
-                  className={`p-6 sm:p-8 md:p-10 flex flex-col justify-center border-lime-cream/20 hover:bg-lime-cream/5 transition-colors ${i % 2 === 0 ? 'border-r' : ''
+                  className={`p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-center border-lime-cream/20 hover:bg-lime-cream/5 transition-colors ${i % 2 === 0 ? 'border-r' : ''
                     } ${i < 4 ? 'border-b' : ''}`}
                 >
-                  <div className="font-sora font-bold text-4xl md:text-5xl text-lime-cream mb-3">
+                  <div className="font-sora font-bold text-3xl sm:text-4xl md:text-5xl text-lime-cream mb-2 sm:mb-3">
                     {stat.value}
                   </div>
                   <div className="font-inter text-[10px] sm:text-xs text-lime-cream/60 uppercase tracking-[0.2em]">
@@ -529,14 +532,14 @@ export default function HomePage() {
       <HeroCarousel />
 
       {/* 1.5. BRAND PARTNERS */}
-      <section className="bg-[#0f1a0b] py-10 md:py-16 border-b border-[#556B2F]/20 relative z-20">
+      <section className="bg-[rgb(11,58,40)] py-10 md:py-16 border-b border-lime-cream/10 relative z-20">
         <div className="container-waha">
           <p className="text-center font-inter text-xs text-lime-cream/40 uppercase tracking-[0.2em] mb-8 md:mb-10">
             Trusted by Premium Brands
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 lg:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
             {['KOHLER', 'HÄFELE', 'HETTICH', 'SAINT-GOBAIN', 'ASIAN PAINTS'].map((brand) => (
-              <div key={brand} className="font-sora font-semibold text-lg md:text-2xl text-lime-cream tracking-widest hover:text-white transition-colors duration-300">
+              <div key={brand} className="font-sora font-semibold text-sm sm:text-lg md:text-2xl text-lime-cream tracking-widest hover:text-white transition-colors duration-300">
                 {brand}
               </div>
             ))}
