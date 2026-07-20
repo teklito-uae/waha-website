@@ -1,0 +1,31 @@
+export const serviceAreaKeywords: string[] = [
+  // UAE — studio in Bur Dubai
+  "Interior Design Services in Dubai",
+  "Interior Design Company in Bur Dubai",
+  "Interior Design Services in Sharjah",
+  "Interior Design Services in Abu Dhabi",
+  "Interior Design Services in Ajman",
+  "Villa Interior Design in Dubai",
+  "Apartment Interior Design in Dubai",
+  "Office Interior Design in Dubai",
+  "Retail Interior Design in Dubai",
+  "Interior Fit-Out Company in Dubai",
+  "Architectural Design Services in Dubai",
+  "3D Visualization Services in Dubai",
+  "Modular Kitchen Design in Dubai",
+  "Interior Design Consultation in Bur Dubai",
+
+  // Kerala — studio in Kasaragod
+  "Interior Design Services in Kasaragod",
+  "Interior Design Company in Kannur",
+  "Interior Design Services in Kerala",
+  "Interior Design Services in Kochi",
+  "Interior Design Services in Kozhikode",
+  "Interior Design Services in Mangalore",
+  "Interior Design Services in Thiruvananthapuram",
+  "Home Interior Design in Kasaragod",
+  "Villa Interior Design in Kannur",
+  "Modular Kitchen Design in Kasaragod",
+  "Architectural Design Services in Kerala",
+  "3D Visualization Services in Kerala",
+]

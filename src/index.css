@@ -1,0 +1,353 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Manual class-based dark mode toggle (not OS-preference driven) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Self-hosted brand fonts (from design-file/fonts)                    */
+/* ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glorida";
+  src: url("./assets/fonts/Glorida-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/fonts/Cairo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/fonts/Cairo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/fonts/Cairo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RH-Zak";
+  src: url("./assets/fonts/RH-Zak Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RH-Zak";
+  src: url("./assets/fonts/RH-Zak Reg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RH-Zak";
+  src: url("./assets/fonts/RH-Zak Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ */
+/* Semantic color tokens — light theme (default) + dark theme (.dark)  */
+/* See docs/design-tokens.md for the rationale behind every value.     */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --background: #ffffff;
+  --background-alt: #faf9f5;
+  --foreground: #1e241f;
+  --card: #ffffff;
+  --card-foreground: #1e241f;
+  --popover: #ffffff;
+  --popover-foreground: #1e241f;
+  --primary: #163526;
+  --primary-foreground: #ffffff;
+  --secondary: #dcd9cc;
+  --secondary-foreground: #1e241f;
+  --muted: #faf9f5;
+  --muted-foreground: #5c6459;
+  --accent: #b8a77a;
+  --accent-foreground: #1e241f;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: rgb(30 36 31 / 12%);
+  --input: rgb(30 36 31 / 16%);
+  --ring: #b8a77a;
+
+  /* Fixed brand-green bands (CTA banner, footer, top bar) — constant in both themes */
+  --brand: #163526;
+  --brand-alt: #122b1f;
+  --brand-foreground: #f5f3ec;
+
+  --radius: 1rem;
+
+  --chart-1: #163526;
+  --chart-2: #b8a77a;
+  --chart-3: #dcd9cc;
+  --chart-4: #1a3f2d;
+  --chart-5: #5c6459;
+
+  --sidebar: #faf9f5;
+  --sidebar-foreground: #1e241f;
+  --sidebar-primary: #163526;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dcd9cc;
+  --sidebar-accent-foreground: #1e241f;
+  --sidebar-border: rgb(30 36 31 / 12%);
+  --sidebar-ring: #b8a77a;
+}
+
+.dark {
+  /* Dark theme deliberately keeps the page canvas the same white/cream as
+     light mode — only chrome (navbar, popovers) and card surfaces switch to
+     the dark-green brand color. See docs/design-tokens.md. */
+  --background: #ffffff;
+  --background-alt: #faf9f5;
+  --foreground: #1e241f;
+  --card: #163526;
+  --card-foreground: #f5f3ec;
+  --popover: #163526;
+  --popover-foreground: #f5f3ec;
+  --primary: #163526;
+  --primary-foreground: #ffffff;
+  --secondary: #dcd9cc;
+  --secondary-foreground: #1e241f;
+  --muted: #faf9f5;
+  --muted-foreground: #5c6459;
+  --accent: #b8a77a;
+  --accent-foreground: #1e241f;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: rgb(30 36 31 / 12%);
+  --input: rgb(30 36 31 / 16%);
+  --ring: #b8a77a;
+
+  --brand: #163526;
+  --brand-alt: #122b1f;
+  --brand-foreground: #f5f3ec;
+
+  --chart-1: #163526;
+  --chart-2: #b8a77a;
+  --chart-3: #dcd9cc;
+  --chart-4: #1a3f2d;
+  --chart-5: #5c6459;
+
+  --sidebar: #163526;
+  --sidebar-foreground: #f5f3ec;
+  --sidebar-primary: #dcd9cc;
+  --sidebar-primary-foreground: #1e241f;
+  --sidebar-accent: #1a3f2d;
+  --sidebar-accent-foreground: #f5f3ec;
+  --sidebar-border: rgb(245 243 236 / 14%);
+  --sidebar-ring: #b8a77a;
+}
+
+/* ------------------------------------------------------------------ */
+/* Map semantic tokens into Tailwind's theme so utilities like          */
+/* bg-background, text-foreground, bg-brand, font-display exist.       */
+/* ------------------------------------------------------------------ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-alt: var(--brand-alt);
+  --color-brand-foreground: var(--brand-foreground);
+
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+
+  --font-display: "Glorida", "Playfair Display", ui-serif, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic-display: "RH-Zak", "Glorida", ui-serif, serif;
+  --font-arabic-sans: "Cairo", "Inter", ui-sans-serif, sans-serif;
+
+  --container-content: 1400px;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-5: var(--chart-5);
+
+  --color-chart-4: var(--chart-4);
+
+  --color-chart-3: var(--chart-3);
+
+  --color-chart-2: var(--chart-2);
+
+  --color-chart-1: var(--chart-1);
+
+  --color-input: var(--input);
+
+  --color-destructive: var(--destructive);
+
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-popover: var(--popover);
+
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  --radius-3xl: calc(var(--radius) * 2.2);
+
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    @apply font-sans;
+  }
+
+  /* Page canvas stays light in both themes (see .dark tokens above), so
+     native form controls / scrollbars should keep rendering with the light
+     color-scheme rather than switching to dark. */
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+/* Hides the scrollbar on horizontally-scrollable rows (e.g. the services
+   carousel) while keeping native touch/wheel/keyboard scrolling intact. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
